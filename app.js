@@ -11,9 +11,11 @@
   /**
    * ===========================================================================
    * 1. VERİ MODELİ VE 3 SEVİYELİ SORULAR (Basit: 200p, Orta: 300p, Zor: 500p)
+   * Toplam 12 Adet Yapay Zeka Okuryazarlığı Sorusu (4 Basit, 4 Orta, 4 Zor)
    * ===========================================================================
    */
   const QUIZ_QUESTIONS = [
+    // --- BASİT SEVİYE (4 Adet • 200 Puan) ---
     {
       id: 1,
       level: "Basit",
@@ -30,6 +32,50 @@
     },
     {
       id: 2,
+      level: "Basit",
+      points: 200,
+      badgeText: "BASİT • 200 PUAN",
+      question: "Üretken yapay zeka modellerine (ChatGPT, Gemini vb.) istenen çıktıyı ürettirmek için verilen yazılı talimat veya yönlendirmelere ne ad verilir?",
+      options: [
+        { key: "A", text: "Prompt (İstem)" },
+        { key: "B", text: "Algoritma" },
+        { key: "C", text: "Derleyici (Compiler)" },
+        { key: "D", text: "Kernel (Çekirdek)" }
+      ],
+      correctKey: "A"
+    },
+    {
+      id: 3,
+      level: "Basit",
+      points: 200,
+      badgeText: "BASİT • 200 PUAN",
+      question: "Mevcut bir görüntü, ses veya videodaki kişinin yapay zeka algoritmaları kullanılarak başka biriyle gerçekçi şekilde değiştirilmesine ne ad verilir?",
+      options: [
+        { key: "A", text: "Phishing (Oltalama)" },
+        { key: "B", text: "Ransomware (Fidye Yazılımı)" },
+        { key: "C", text: "Deepfake (Derin Sahte)" },
+        { key: "D", text: "Firewall (Güvenlik Duvarı)" }
+      ],
+      correctKey: "C"
+    },
+    {
+      id: 4,
+      level: "Basit",
+      points: 200,
+      badgeText: "BASİT • 200 PUAN",
+      question: "Bir yapay zeka modelinin, etiketlenmiş girdi verileri ve bunlara karşılık gelen doğru çıktılar üzerinden eğitilmesine ne ad verilir?",
+      options: [
+        { key: "A", text: "Denetimli Öğrenme (Supervised Learning)" },
+        { key: "B", text: "Denetimsiz Öğrenme (Unsupervised Learning)" },
+        { key: "C", text: "Pekiştirmeli Öğrenme (Reinforcement Learning)" },
+        { key: "D", text: "Kendi Kendine Denetimli Öğrenme (Self-Supervised)" }
+      ],
+      correctKey: "A"
+    },
+
+    // --- ORTA SEVİYE (4 Adet • 300 Puan) ---
+    {
+      id: 5,
       level: "Orta",
       points: 300,
       badgeText: "ORTA • 300 PUAN",
@@ -43,11 +89,55 @@
       correctKey: "C"
     },
     {
-      id: 3,
+      id: 6,
+      level: "Orta",
+      points: 300,
+      badgeText: "ORTA • 300 PUAN",
+      question: "Büyük Dil Modellerinin harici bilgi kaynaklarına ve güncel belgelere erişerek yanıt üretmesini sağlayan ve halüsinasyonu azaltan mimariye ne ad verilir?",
+      options: [
+        { key: "A", text: "RAG (Retrieval-Augmented Generation)" },
+        { key: "B", text: "GAN (Generative Adversarial Network)" },
+        { key: "C", text: "RNN (Recurrent Neural Network)" },
+        { key: "D", text: "CNN (Convolutional Neural Network)" }
+      ],
+      correctKey: "A"
+    },
+    {
+      id: 7,
+      level: "Orta",
+      points: 300,
+      badgeText: "ORTA • 300 PUAN",
+      question: "Bir makine öğrenimi modelinin eğitim verilerini ezberleyerek yeni ve görülmemiş test verileri üzerinde başarısız olması durumuna ne ad verilir?",
+      options: [
+        { key: "A", text: "Underfitting (Yetersiz Uyum)" },
+        { key: "B", text: "Overfitting (Aşırı Uyum)" },
+        { key: "C", text: "Data Augmentation (Veri Çoğaltma)" },
+        { key: "D", text: "Feature Scaling (Özellik Ölçekleme)" }
+      ],
+      correctKey: "B"
+    },
+    {
+      id: 8,
+      level: "Orta",
+      points: 300,
+      badgeText: "ORTA • 300 PUAN",
+      question: "Bir makinenin insanla ayırt edilemeyecek düzeyde zeki davranış sergileyip sergileyemediğini ölçmeyi amaçlayan klasik test hangisidir?",
+      options: [
+        { key: "A", text: "Voight-Kampff Testi" },
+        { key: "B", text: "Turing Testi" },
+        { key: "C", text: "CAPTCHA Doğrulaması" },
+        { key: "D", text: "Lovelace Testi" }
+      ],
+      correctKey: "B"
+    },
+
+    // --- ZOR SEVİYE (4 Adet • 500 Puan) ---
+    {
+      id: 9,
       level: "Zor",
       points: 500,
       badgeText: "ZOR • 500 PUAN",
-      question: "ChatGPT ve benzeri modern üretken yapay zekaların temelini oluşturan Transformer mimarisinde, girdideki tüm kelimelerin birbirleriyle anlamsal ilişkisini ve ağırlığını eş zamanlı hesaplayan kilit mekanizma hangisidir?",
+      question: "ChatGPT ve benzeri modern üretken yapay zekaların temelini oluşturan Transformer mimarisinde, girdideki kelimelerin birbirleriyle anlamsal ilişkisini eş zamanlı hesaplayan kilit mekanizma hangisidir?",
       options: [
         { key: "A", text: "Self-Attention (Öz-Dikkat) Mekanizması" },
         { key: "B", text: "Convolutional Layer (Evrişim Katmanı)" },
@@ -55,17 +145,53 @@
         { key: "D", text: "Recurrent Memory Unit (Tekrarlayan Bellek)" }
       ],
       correctKey: "A"
+    },
+    {
+      id: 10,
+      level: "Zor",
+      points: 500,
+      badgeText: "ZOR • 500 PUAN",
+      question: "Büyük Dil Modellerini insan tercihleri ve güvenlik ilkeleriyle hizalamak (alignment) amacıyla insan geri bildirimlerinden yararlanılarak uygulanan yöntem hangisidir?",
+      options: [
+        { key: "A", text: "RLHF (Reinforcement Learning from Human Feedback)" },
+        { key: "B", text: "Quantization (Kuantalama)" },
+        { key: "C", text: "Model Pruning (Ağırlık Budama)" },
+        { key: "D", text: "Knowledge Distillation (Bilgi Damıtma)" }
+      ],
+      correctKey: "A"
+    },
+    {
+      id: 11,
+      level: "Zor",
+      points: 500,
+      badgeText: "ZOR • 500 PUAN",
+      question: "Doğal Dil İşleme alanında kelimelerin veya metin parçalarının anlamsal özelliklerini çok boyutlu bir uzayda sayısal diziler olarak temsil eden yapıya ne ad verilir?",
+      options: [
+        { key: "A", text: "Hash Map (Özet Tablosu)" },
+        { key: "B", text: "Vektör Gömme (Vector Embedding)" },
+        { key: "C", text: "One-Hot Encoding" },
+        { key: "D", text: "B-Tree İndeksleme" }
+      ],
+      correctKey: "B"
+    },
+    {
+      id: 12,
+      level: "Zor",
+      points: 500,
+      badgeText: "ZOR • 500 PUAN",
+      question: "Bir Büyük Dil Modelinin (LLM) tek bir oturumda veya istemde girdi ve çıktı olarak aynı anda hafızasında tutabildiği maksimum belirteç (token) kapasitesine ne ad verilir?",
+      options: [
+        { key: "A", text: "Batch Size (Grup Boyutu)" },
+        { key: "B", text: "Latent Space (Gizil Uzay)" },
+        { key: "C", text: "Bağlam Penceresi (Context Window)" },
+        { key: "D", text: "Temperature (Sıcaklık Parametresi)" }
+      ],
+      correctKey: "C"
     }
   ];
 
-  // Başlangıç Tohum Verisi (Kiosk açıldığında boş kalmaması için)
-  const SEED_LEADERBOARD = [
-    { name: "Alperen Demir", correct: 3, rawPoints: 1000, totalTime: 12.4, score: 80.65 },
-    { name: "Selin Kaya", correct: 3, rawPoints: 1000, totalTime: 15.2, score: 65.79 },
-    { name: "Eren Öztürk", correct: 3, rawPoints: 1000, totalTime: 18.0, score: 55.56 },
-    { name: "Zeynep Aydın", correct: 2, rawPoints: 800, totalTime: 14.5, score: 55.17 },
-    { name: "Mert Çelik", correct: 2, rawPoints: 700, totalTime: 13.8, score: 50.72 }
-  ];
+  // Başlangıç Tohum Verisi (Tertemiz başlangıç için boş bırakılmıştır)
+  const SEED_LEADERBOARD = [];
 
   const STORAGE_KEY = "ytt_kiosk_leaderboard_v1";
   const SECONDS_PER_QUESTION = 20;
@@ -171,7 +297,8 @@
     timerInterval: null,
     remainingSeconds: SECONDS_PER_QUESTION,
     isAnsweringLocked: false,
-    currentEntry: null
+    currentEntry: null,
+    currentCorrectKey: null
   };
 
   /**
@@ -339,9 +466,24 @@
 
   /**
    * ===========================================================================
-   * 9. EKRAN 3: YARIŞMA SÜRECİ & GERİ SAYIM
+   * 9. EKRAN 3: YARIŞMA SÜRECİ, GERİ SAYIM & SHUFFLE ALGORİTMASI
    * ===========================================================================
    */
+  /**
+   * Fisher-Yates (Knuth) Shuffle Algoritması
+   * Orijinal diziyi bozmadan karıştırılmış kopyasını döndürür.
+   */
+  function fisherYatesShuffle(array) {
+    const arr = array.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+    return arr;
+  }
+
   function startQuiz() {
     state.currentQuestionIndex = 0;
     state.userAnswers = [];
@@ -373,18 +515,27 @@
     // Soru Metni
     quizQuestionText.textContent = q.question;
 
-    // Şıkları Oluştur (Büyük Kiosk Butonları)
+    // Şıkları Fisher-Yates Algoritması ile Karıştır
+    const displayKeys = ["A", "B", "C", "D"];
+    const shuffledOptions = fisherYatesShuffle(q.options);
+
+    // Orijinal doğru seçeneğin (q.correctKey) karıştırılmış dizideki yeni indeksini bul
+    const newCorrectIndex = shuffledOptions.findIndex(opt => opt.key === q.correctKey);
+    state.currentCorrectKey = newCorrectIndex !== -1 ? displayKeys[newCorrectIndex] : q.correctKey;
+
+    // Şıkları Oluştur (Büyük Kiosk Butonları: "A, B, C, D" sabit harfler kalır, metinler karıştırılır)
     quizOptionsContainer.innerHTML = "";
-    q.options.forEach(opt => {
+    shuffledOptions.forEach((opt, idx) => {
+      const assignedKey = displayKeys[idx] || opt.key;
       const btn = document.createElement("button");
       btn.className = "quiz-option-btn cyber-cut-btn";
       btn.innerHTML = `
-        <div class="opt-key">${opt.key}</div>
+        <div class="opt-key">${assignedKey}</div>
         <div class="opt-text">${opt.text}</div>
       `;
 
       btn.addEventListener("click", () => {
-        handleAnswerSelection(opt.key, btn);
+        handleAnswerSelection(assignedKey, btn);
       });
 
       quizOptionsContainer.appendChild(btn);
@@ -441,7 +592,9 @@
     const elapsedSeconds = Math.min(20, (performance.now() - state.currentQuestionStartTime) / 1000);
 
     const q = QUIZ_QUESTIONS[state.currentQuestionIndex];
-    const isCorrect = (selectedKey === q.correctKey);
+    // Güncel şık sırasına göre belirlenen doğru harfle karşılaştırma
+    const activeTargetKey = state.currentCorrectKey || q.correctKey;
+    const isCorrect = (selectedKey === activeTargetKey);
     const points = isCorrect ? q.points : 0;
 
     btnElement.classList.add("selected");
@@ -503,6 +656,9 @@
     resultUserName.textContent = state.userName;
     resultFinalScore.textContent = calculatedScore.toFixed(2);
     resultCorrectCount.textContent = correctCount;
+    if (resultCorrectCount && resultCorrectCount.parentElement) {
+      resultCorrectCount.parentElement.innerHTML = `<span id="result-correct-count" class="text-success">${correctCount}</span> / ${QUIZ_QUESTIONS.length} Doğru`;
+    }
     resultRawPoints.textContent = state.totalRawPoints;
     resultTotalTime.textContent = state.totalTimeSpent.toFixed(1);
 
@@ -524,7 +680,17 @@
       const data = localStorage.getItem(STORAGE_KEY);
       if (data) {
         const parsed = JSON.parse(data);
-        if (Array.isArray(parsed)) return parsed;
+        if (Array.isArray(parsed)) {
+          // Eski test/fantom verilerini temizle
+          const isLegacySeeds = parsed.length === 5 && parsed.every(p => 
+            ["Alperen Demir", "Selin Kaya", "Eren Öztürk", "Zeynep Aydın", "Mert Çelik"].includes(p.name)
+          );
+          if (isLegacySeeds) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+            return [];
+          }
+          return parsed;
+        }
       }
     } catch (e) {}
     return [...SEED_LEADERBOARD];
@@ -573,7 +739,7 @@
           <span>${escapeHtml(item.name)}</span>
           ${isCurrent ? '<span class="current-tag">SEN</span>' : ''}
         </td>
-        <td class="td-correct">${item.correct}/3</td>
+        <td class="td-correct">${item.correct}/${QUIZ_QUESTIONS.length}</td>
         <td class="td-time">${item.totalTime}s</td>
         <td class="td-score">${parseFloat(item.score).toFixed(2)}</td>
       `;
@@ -725,8 +891,8 @@
         if (nameInput) nameInput.focus();
         return;
       }
-      if (isNaN(correct) || correct < 0 || correct > 3) {
-        alert("Doğru sayısı 0 ile 3 arasında bir değer olmalıdır!");
+      if (isNaN(correct) || correct < 0 || correct > QUIZ_QUESTIONS.length) {
+        alert(`Doğru sayısı 0 ile ${QUIZ_QUESTIONS.length} arasında bir değer olmalıdır!`);
         return;
       }
       if (isNaN(rawPoints) || rawPoints < 0) {
@@ -891,6 +1057,20 @@
     // İlk liderlik tablosunu yükle
     const currentList = getLeaderboard();
     renderLeaderboard(currentList);
+
+    // Kural ve özet kartlarındaki dinamik soru sayılarını güncelle
+    const ruleTitleEl = document.querySelector(".rule-title-cyan");
+    if (ruleTitleEl) {
+      ruleTitleEl.textContent = `Toplam ${QUIZ_QUESTIONS.length} Soru`;
+    }
+    const ruleDescEl = ruleTitleEl ? ruleTitleEl.nextElementSibling : null;
+    if (ruleDescEl) {
+      ruleDescEl.innerHTML = `Yapay zeka alanından sırasıyla <strong class="text-accent">Basit (200p)</strong>, <strong class="text-amber">Orta (300p)</strong> ve <strong class="text-pink">Zor (500p)</strong> toplam ${QUIZ_QUESTIONS.length} soru sorulacak.`;
+    }
+    const statSubEl = resultTotalTime ? resultTotalTime.parentElement?.nextElementSibling : null;
+    if (statSubEl && statSubEl.classList.contains("stat-sub")) {
+      statSubEl.textContent = `${QUIZ_QUESTIONS.length} soru toplamı`;
+    }
 
     // İlk input odağı
     if (inputUserName) {
