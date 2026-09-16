@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Büyük Dil Modellerinin (LLM) gerçekte var olmayan bilgileri son derece ikna edici ve kendinden emin bir dille uydurması olayına ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Overfitting (Aşırı Uyum)" },
+      { "key": "B", "text": "Halüsinasyon (Hallucination)" },
+      { "key": "C", "text": "Tokenizasyon (Tokenization)" },
+      { "key": "D", "text": "Parametre Kayması (Model Drift)" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": 2,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Üretken yapay zeka modellerine (ChatGPT, Gemini vb.) istenen çıktıyı ürettirmek için verilen yazılı talimat veya yönlendirmelere ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Prompt (İstem)" },
+      { "key": "B", "text": "Algoritma" },
+      { "key": "C", "text": "Derleyici (Compiler)" },
+      { "key": "D", "text": "Kernel (Çekirdek)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 3,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Mevcut bir görüntü, ses veya videodaki kişinin yapay zeka algoritmaları kullanılarak başka biriyle gerçekçi şekilde değiştirilmesine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Phishing (Oltalama)" },
+      { "key": "B", "text": "Ransomware (Fidye Yazılımı)" },
+      { "key": "C", "text": "Deepfake (Derin Sahte)" },
+      { "key": "D", "text": "Firewall (Güvenlik Duvarı)" }
+    ],
+    "correctKey": "C"
+  },
+  {
+    "id": 4,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Bir yapay zeka modelinin, etiketlenmiş girdi verileri ve bunlara karşılık gelen doğru çıktılar üzerinden eğitilmesine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Denetimli Öğrenme (Supervised Learning)" },
+      { "key": "B", "text": "Denetimsiz Öğrenme (Unsupervised Learning)" },
+      { "key": "C", "text": "Pekiştirmeli Öğrenme (Reinforcement Learning)" },
+      { "key": "D", "text": "Kendi Kendine Denetimli Öğrenme (Self-Supervised)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 5,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Büyük Dil Modellerinin metinleri işlerken, analiz ederken ve üretirken parçalara ayırdığı en temel anlam birimlerine veya kelime/hece parçacıklarına ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Piksel (Pixel)" },
+      { "key": "B", "text": "Vektör (Vector)" },
+      { "key": "C", "text": "Token (Belirteç)" },
+      { "key": "D", "text": "Bit (İkili Basamak)" }
+    ],
+    "correctKey": "C"
+  },
+  {
+    "id": 6,
+    "level": "Basit",
+    "points": 200,
+    "badgeText": "BASİT • 200 PUAN",
+    "question": "Yapay zeka modellerinin eğitildiği veri setindeki insan kaynaklı önyargıları öğrenerek belirli gruplara karşı haksız veya taraflı kararlar üretmesine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Algoritmik Yanlılık (Bias)" },
+      { "key": "B", "text": "Veri Şifreleme (Encryption)" },
+      { "key": "C", "text": "Model Sıkıştırma (Compression)" },
+      { "key": "D", "text": "Önbelleğe Alma (Caching)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 7,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Bir yapay zeka modeline herhangi bir eğitim örneği vermeden, yalnızca görevi tanımlayarak doğrudan çıktı üretmesini sağlayan istem (prompt) tekniğine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Few-Shot Prompting" },
+      { "key": "B", "text": "Fine-Tuning (İnce Ayar)" },
+      { "key": "C", "text": "Zero-Shot Prompting" },
+      { "key": "D", "text": "Chain of Thought (Düşünce Zinciri)" }
+    ],
+    "correctKey": "C"
+  },
+  {
+    "id": 8,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Büyük Dil Modellerinin harici bilgi kaynaklarına ve güncel belgelere erişerek yanıt üretmesini sağlayan ve halüsinasyonu azaltan mimariye ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "RAG (Retrieval-Augmented Generation)" },
+      { "key": "B", "text": "GAN (Generative Adversarial Network)" },
+      { "key": "C", "text": "RNN (Recurrent Neural Network)" },
+      { "key": "D", "text": "CNN (Convolutional Neural Network)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 9,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Bir makine öğrenimi modelinin eğitim verilerini ezberleyerek yeni ve görülmemiş test verileri üzerinde başarısız olması durumuna ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Underfitting (Yetersiz Uyum)" },
+      { "key": "B", "text": "Overfitting (Aşırı Uyum)" },
+      { "key": "C", "text": "Data Augmentation (Veri Çoğaltma)" },
+      { "key": "D", "text": "Feature Scaling (Özellik Ölçekleme)" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": 10,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Bir makinenin insanla ayırt edilemeyecek düzeyde zeki davranış sergileyip sergileyemediğini ölçmeyi amaçlayan klasik test hangisidir?",
+    "options": [
+      { "key": "A", "text": "Voight-Kampff Testi" },
+      { "key": "B", "text": "Turing Testi" },
+      { "key": "C", "text": "CAPTCHA Doğrulaması" },
+      { "key": "D", "text": "Lovelace Testi" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": 11,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Otonom araçların çevresindeki yayaları, araçları ve trafik işaretlerini kamera görüntüleri üzerinden gerçek zamanlı algılamasını sağlayan yapay zeka alt dalı hangisidir?",
+    "options": [
+      { "key": "A", "text": "Bilgisayarla Görme (Computer Vision)" },
+      { "key": "B", "text": "Doğal Dil İşleme (NLP)" },
+      { "key": "C", "text": "Ses Tanıma (Speech Recognition)" },
+      { "key": "D", "text": "Bulanık Mantık (Fuzzy Logic)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 12,
+    "level": "Orta",
+    "points": 300,
+    "badgeText": "ORTA • 300 PUAN",
+    "question": "Yalnızca metin değil; görsel, ses ve video gibi birden çok farklı veri tipini aynı anda anlayıp işleyebilen yapay zeka modellerine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Tek Modelli (Unimodal) Modeller" },
+      { "key": "B", "text": "Çok Modelli (Multimodal) Modeller" },
+      { "key": "C", "text": "Deterministik Modeller" },
+      { "key": "D", "text": "Sembolik Sistemler" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": 13,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "ChatGPT ve benzeri modern üretken yapay zekaların temelini oluşturan Transformer mimarisinde, girdideki kelimelerin birbirleriyle anlamsal ilişkisini eş zamanlı hesaplayan kilit mekanizma hangisidir?",
+    "options": [
+      { "key": "A", "text": "Self-Attention (Öz-Dikkat) Mekanizması" },
+      { "key": "B", "text": "Convolutional Layer (Evrişim Katmanı)" },
+      { "key": "C", "text": "Backpropagation (Geriye Yayılım)" },
+      { "key": "D", "text": "Recurrent Memory Unit (Tekrarlayan Bellek)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 14,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "Büyük Dil Modellerini insan tercihleri ve güvenlik ilkeleriyle hizalamak (alignment) amacıyla insan geri bildirimlerinden yararlanılarak uygulanan yöntem hangisidir?",
+    "options": [
+      { "key": "A", "text": "RLHF (Reinforcement Learning from Human Feedback)" },
+      { "key": "B", "text": "Quantization (Kuantalama)" },
+      { "key": "C", "text": "Model Pruning (Ağırlık Budama)" },
+      { "key": "D", "text": "Knowledge Distillation (Bilgi Damıtma)" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": 15,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "Doğal Dil İşleme alanında kelimelerin veya metin parçalarının anlamsal özelliklerini çok boyutlu bir uzayda sayısal diziler olarak temsil eden yapıya ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Hash Map (Özet Tablosu)" },
+      { "key": "B", "text": "Vektör Gömme (Vector Embedding)" },
+      { "key": "C", "text": "One-Hot Encoding" },
+      { "key": "D", "text": "B-Tree İndeksleme" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": 16,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "Bir Büyük Dil Modelinin (LLM) tek bir oturumda veya istemde girdi ve çıktı olarak aynı anda hafızasında tutabildiği maksimum belirteç (token) kapasitesine ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Batch Size (Grup Boyutu)" },
+      { "key": "B", "text": "Latent Space (Gizil Uzay)" },
+      { "key": "C", "text": "Bağlam Penceresi (Context Window)" },
+      { "key": "D", "text": "Temperature (Sıcaklık Parametresi)" }
+    ],
+    "correctKey": "C"
+  },
+  {
+    "id": 17,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "Büyük Dil Modellerinde çıktı üretimi sırasında olasılık dağılımını etkileyerek yanıtların yaratıcılığını veya tam tersine deterministikliğini belirleyen hiperparametreye ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Learning Rate (Öğrenme Oranı)" },
+      { "key": "B", "text": "Epoch Sayısı" },
+      { "key": "C", "text": "Temperature (Sıcaklık)" },
+      { "key": "D", "text": "Dropout Oranı" }
+    ],
+    "correctKey": "C"
+  },
+  {
+    "id": 18,
+    "level": "Zor",
+    "points": 500,
+    "badgeText": "ZOR • 500 PUAN",
+    "question": "Eğitilmiş derin öğrenme modellerinin ağırlık parametrelerinin sayısal hassasiyetini (örneğin FP32'den INT8'e) düşürerek bellek ve işlem tasarrufu sağlayan tekniğe ne ad verilir?",
+    "options": [
+      { "key": "A", "text": "Quantization (Kuantalama)" },
+      { "key": "B", "text": "Backpropagation (Geri Yayılım)" },
+      { "key": "C", "text": "Overfitting (Aşırı Uyum)" },
+      { "key": "D", "text": "Batch Normalization" }
+    ],
+    "correctKey": "A"
+  }
+]

@@ -10,185 +10,12 @@
 
   /**
    * ===========================================================================
-   * 1. VERİ MODELİ VE 3 SEVİYELİ SORULAR (Basit: 200p, Orta: 300p, Zor: 500p)
-   * Toplam 12 Adet Yapay Zeka Okuryazarlığı Sorusu (4 Basit, 4 Orta, 4 Zor)
+   * 1. QUESTION POOL (questions.json Dosyasından Asenkron Yüklenir)
    * ===========================================================================
    */
-  const QUIZ_QUESTIONS = [
-    // --- BASİT SEVİYE (4 Adet • 200 Puan) ---
-    {
-      id: 1,
-      level: "Basit",
-      points: 200,
-      badgeText: "BASİT • 200 PUAN",
-      question: "Büyük Dil Modellerinin (LLM) gerçekte var olmayan bilgileri son derece ikna edici ve kendinden emin bir dille uydurması olayına ne ad verilir?",
-      options: [
-        { key: "A", text: "Overfitting (Aşırı Uyum)" },
-        { key: "B", text: "Halüsinasyon (Hallucination)" },
-        { key: "C", text: "Tokenizasyon (Tokenization)" },
-        { key: "D", text: "Parametre Kayması (Model Drift)" }
-      ],
-      correctKey: "B"
-    },
-    {
-      id: 2,
-      level: "Basit",
-      points: 200,
-      badgeText: "BASİT • 200 PUAN",
-      question: "Üretken yapay zeka modellerine (ChatGPT, Gemini vb.) istenen çıktıyı ürettirmek için verilen yazılı talimat veya yönlendirmelere ne ad verilir?",
-      options: [
-        { key: "A", text: "Prompt (İstem)" },
-        { key: "B", text: "Algoritma" },
-        { key: "C", text: "Derleyici (Compiler)" },
-        { key: "D", text: "Kernel (Çekirdek)" }
-      ],
-      correctKey: "A"
-    },
-    {
-      id: 3,
-      level: "Basit",
-      points: 200,
-      badgeText: "BASİT • 200 PUAN",
-      question: "Mevcut bir görüntü, ses veya videodaki kişinin yapay zeka algoritmaları kullanılarak başka biriyle gerçekçi şekilde değiştirilmesine ne ad verilir?",
-      options: [
-        { key: "A", text: "Phishing (Oltalama)" },
-        { key: "B", text: "Ransomware (Fidye Yazılımı)" },
-        { key: "C", text: "Deepfake (Derin Sahte)" },
-        { key: "D", text: "Firewall (Güvenlik Duvarı)" }
-      ],
-      correctKey: "C"
-    },
-    {
-      id: 4,
-      level: "Basit",
-      points: 200,
-      badgeText: "BASİT • 200 PUAN",
-      question: "Bir yapay zeka modelinin, etiketlenmiş girdi verileri ve bunlara karşılık gelen doğru çıktılar üzerinden eğitilmesine ne ad verilir?",
-      options: [
-        { key: "A", text: "Denetimli Öğrenme (Supervised Learning)" },
-        { key: "B", text: "Denetimsiz Öğrenme (Unsupervised Learning)" },
-        { key: "C", text: "Pekiştirmeli Öğrenme (Reinforcement Learning)" },
-        { key: "D", text: "Kendi Kendine Denetimli Öğrenme (Self-Supervised)" }
-      ],
-      correctKey: "A"
-    },
-
-    // --- ORTA SEVİYE (4 Adet • 300 Puan) ---
-    {
-      id: 5,
-      level: "Orta",
-      points: 300,
-      badgeText: "ORTA • 300 PUAN",
-      question: "Bir yapay zeka modeline herhangi bir eğitim örneği vermeden, yalnızca görevi tanımlayarak doğrudan çıktı üretmesini sağlayan istem (prompt) tekniğine ne ad verilir?",
-      options: [
-        { key: "A", text: "Few-Shot Prompting" },
-        { key: "B", text: "Fine-Tuning (İnce Ayar)" },
-        { key: "C", text: "Zero-Shot Prompting" },
-        { key: "D", text: "Chain of Thought (Düşünce Zinciri)" }
-      ],
-      correctKey: "C"
-    },
-    {
-      id: 6,
-      level: "Orta",
-      points: 300,
-      badgeText: "ORTA • 300 PUAN",
-      question: "Büyük Dil Modellerinin harici bilgi kaynaklarına ve güncel belgelere erişerek yanıt üretmesini sağlayan ve halüsinasyonu azaltan mimariye ne ad verilir?",
-      options: [
-        { key: "A", text: "RAG (Retrieval-Augmented Generation)" },
-        { key: "B", text: "GAN (Generative Adversarial Network)" },
-        { key: "C", text: "RNN (Recurrent Neural Network)" },
-        { key: "D", text: "CNN (Convolutional Neural Network)" }
-      ],
-      correctKey: "A"
-    },
-    {
-      id: 7,
-      level: "Orta",
-      points: 300,
-      badgeText: "ORTA • 300 PUAN",
-      question: "Bir makine öğrenimi modelinin eğitim verilerini ezberleyerek yeni ve görülmemiş test verileri üzerinde başarısız olması durumuna ne ad verilir?",
-      options: [
-        { key: "A", text: "Underfitting (Yetersiz Uyum)" },
-        { key: "B", text: "Overfitting (Aşırı Uyum)" },
-        { key: "C", text: "Data Augmentation (Veri Çoğaltma)" },
-        { key: "D", text: "Feature Scaling (Özellik Ölçekleme)" }
-      ],
-      correctKey: "B"
-    },
-    {
-      id: 8,
-      level: "Orta",
-      points: 300,
-      badgeText: "ORTA • 300 PUAN",
-      question: "Bir makinenin insanla ayırt edilemeyecek düzeyde zeki davranış sergileyip sergileyemediğini ölçmeyi amaçlayan klasik test hangisidir?",
-      options: [
-        { key: "A", text: "Voight-Kampff Testi" },
-        { key: "B", text: "Turing Testi" },
-        { key: "C", text: "CAPTCHA Doğrulaması" },
-        { key: "D", text: "Lovelace Testi" }
-      ],
-      correctKey: "B"
-    },
-
-    // --- ZOR SEVİYE (4 Adet • 500 Puan) ---
-    {
-      id: 9,
-      level: "Zor",
-      points: 500,
-      badgeText: "ZOR • 500 PUAN",
-      question: "ChatGPT ve benzeri modern üretken yapay zekaların temelini oluşturan Transformer mimarisinde, girdideki kelimelerin birbirleriyle anlamsal ilişkisini eş zamanlı hesaplayan kilit mekanizma hangisidir?",
-      options: [
-        { key: "A", text: "Self-Attention (Öz-Dikkat) Mekanizması" },
-        { key: "B", text: "Convolutional Layer (Evrişim Katmanı)" },
-        { key: "C", text: "Backpropagation (Geriye Yayılım)" },
-        { key: "D", text: "Recurrent Memory Unit (Tekrarlayan Bellek)" }
-      ],
-      correctKey: "A"
-    },
-    {
-      id: 10,
-      level: "Zor",
-      points: 500,
-      badgeText: "ZOR • 500 PUAN",
-      question: "Büyük Dil Modellerini insan tercihleri ve güvenlik ilkeleriyle hizalamak (alignment) amacıyla insan geri bildirimlerinden yararlanılarak uygulanan yöntem hangisidir?",
-      options: [
-        { key: "A", text: "RLHF (Reinforcement Learning from Human Feedback)" },
-        { key: "B", text: "Quantization (Kuantalama)" },
-        { key: "C", text: "Model Pruning (Ağırlık Budama)" },
-        { key: "D", text: "Knowledge Distillation (Bilgi Damıtma)" }
-      ],
-      correctKey: "A"
-    },
-    {
-      id: 11,
-      level: "Zor",
-      points: 500,
-      badgeText: "ZOR • 500 PUAN",
-      question: "Doğal Dil İşleme alanında kelimelerin veya metin parçalarının anlamsal özelliklerini çok boyutlu bir uzayda sayısal diziler olarak temsil eden yapıya ne ad verilir?",
-      options: [
-        { key: "A", text: "Hash Map (Özet Tablosu)" },
-        { key: "B", text: "Vektör Gömme (Vector Embedding)" },
-        { key: "C", text: "One-Hot Encoding" },
-        { key: "D", text: "B-Tree İndeksleme" }
-      ],
-      correctKey: "B"
-    },
-    {
-      id: 12,
-      level: "Zor",
-      points: 500,
-      badgeText: "ZOR • 500 PUAN",
-      question: "Bir Büyük Dil Modelinin (LLM) tek bir oturumda veya istemde girdi ve çıktı olarak aynı anda hafızasında tutabildiği maksimum belirteç (token) kapasitesine ne ad verilir?",
-      options: [
-        { key: "A", text: "Batch Size (Grup Boyutu)" },
-        { key: "B", text: "Latent Space (Gizil Uzay)" },
-        { key: "C", text: "Bağlam Penceresi (Context Window)" },
-        { key: "D", text: "Temperature (Sıcaklık Parametresi)" }
-      ],
-      correctKey: "C"
-    }
-  ];
+  let QUESTION_POOL = [];
+  let QUIZ_QUESTIONS = [];
+  let isQuestionsLoaded = false;
 
   // Başlangıç Tohum Verisi (Tertemiz başlangıç için boş bırakılmıştır)
   const SEED_LEADERBOARD = [];
@@ -289,6 +116,7 @@
    */
   const state = {
     userName: "",
+    activeQuestions: [],
     currentQuestionIndex: 0,
     userAnswers: [],
     totalRawPoints: 0,
@@ -369,15 +197,61 @@
 
   /**
    * ===========================================================================
-   * 5. EKRAN YÖNETİMİ (STATE MACHINE)
+   * 5. ASENKRON VERİ YÜKLEME (FETCH API)
+   * questions.json dosyasından 18 soruluk havuz asenkron yüklenir.
+   * ===========================================================================
+   */
+  async function loadQuestionsFromJSON() {
+    if (btnWelcomeNext) {
+      btnWelcomeNext.disabled = true;
+      const span = btnWelcomeNext.querySelector("span");
+      if (span) span.textContent = "Sorular Yükleniyor...";
+    }
+
+    try {
+      const response = await fetch("questions.json");
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status} - ${response.statusText}`);
+      }
+      const data = await response.json();
+      if (!Array.isArray(data)) {
+        throw new Error("Geçersiz veri formatı: JSON bir dizi olmalıdır.");
+      }
+
+      QUESTION_POOL = data;
+      QUIZ_QUESTIONS = data;
+      isQuestionsLoaded = true;
+
+      if (btnWelcomeNext) {
+        btnWelcomeNext.disabled = false;
+        const span = btnWelcomeNext.querySelector("span");
+        if (span) span.textContent = "İleri";
+      }
+
+      // Veri başarıyla yüklendiğinde runSystemCheck() çalıştırılır
+      runSystemCheck();
+    } catch (error) {
+      console.error("[YTT Kiosk] Soru veritabanı yüklenirken hata oluştu:", error);
+      if (btnWelcomeNext) {
+        const span = btnWelcomeNext.querySelector("span");
+        if (span) span.textContent = "Yükleme Hatası!";
+      }
+    }
+  }
+
+  /**
+   * ===========================================================================
+   * 6. EKRAN YÖNETİMİ (STATE MACHINE)
    * ===========================================================================
    */
   function showScreen(screenKey) {
     Object.keys(screens).forEach(key => {
-      if (key === screenKey) {
-        screens[key].classList.add("active");
-      } else {
-        screens[key].classList.remove("active");
+      if (screens[key]) {
+        if (key === screenKey) {
+          screens[key].classList.add("active");
+        } else {
+          screens[key].classList.remove("active");
+        }
       }
     });
     window.scrollTo(0, 0);
@@ -385,10 +259,9 @@
 
   /**
    * ===========================================================================
-   * 6. LOGO HATASI FALLBACK & 3-CLICK ADMIN TETİKLEYİCİSİ
+   * 7. LOGO HATASI FALLBACK & 3-CLICK ADMIN TETİKLEYİCİSİ
    * ===========================================================================
    */
-  // Global Fallback Handler (logo.png yüklenemezse düzen bozulmaz)
   window.handleLogoError = function (imgElement) {
     imgElement.style.display = 'none';
     const fallbackEl = document.getElementById("kiosk-logo-fallback");
@@ -397,7 +270,6 @@
     }
   };
 
-  // Dokunmatik Ekranlar İçin: Logoya 3 Kez Tıklama ile Admin Paneli Açma
   let logoClickCount = 0;
   let logoClickTimer = null;
 
@@ -420,10 +292,15 @@
 
   /**
    * ===========================================================================
-   * 7. EKRAN 1: KARŞILAMA VE GİRİŞ
+   * 8. EKRAN 1: KARŞILAMA VE GİRİŞ
    * ===========================================================================
    */
   function handleWelcomeNext() {
+    if (!isQuestionsLoaded || QUESTION_POOL.length === 0) {
+      sound.playWarning();
+      return;
+    }
+
     const name = inputUserName.value.trim();
     if (!name || name.length < 2) {
       sound.playWarning();
@@ -444,31 +321,40 @@
     showScreen("info");
   }
 
-  btnWelcomeNext.addEventListener("click", handleWelcomeNext);
-  inputUserName.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") handleWelcomeNext();
-  });
+  if (btnWelcomeNext) {
+    btnWelcomeNext.addEventListener("click", handleWelcomeNext);
+  }
+  if (inputUserName) {
+    inputUserName.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") handleWelcomeNext();
+    });
+  }
 
   /**
    * ===========================================================================
-   * 8. EKRAN 2: BİLGİLENDİRME VE BAŞLATMA
+   * 9. EKRAN 2: BİLGİLENDİRME VE BAŞLATMA
    * ===========================================================================
    */
-  btnInfoBack.addEventListener("click", () => {
-    sound.playClick();
-    showScreen("welcome");
-  });
+  if (btnInfoBack) {
+    btnInfoBack.addEventListener("click", () => {
+      sound.playClick();
+      showScreen("welcome");
+    });
+  }
 
-  btnStartQuiz.addEventListener("click", () => {
-    sound.playClick();
-    startQuiz();
-  });
+  if (btnStartQuiz) {
+    btnStartQuiz.addEventListener("click", () => {
+      sound.playClick();
+      startQuiz();
+    });
+  }
 
   /**
    * ===========================================================================
-   * 9. EKRAN 3: YARIŞMA SÜRECİ, GERİ SAYIM & SHUFFLE ALGORİTMASI
+   * 10. EKRAN 3: YARIŞMA SÜRECİ, FISHER-YATES SHUFFLE & OTURUM SEÇİMİ
    * ===========================================================================
    */
+
   /**
    * Fisher-Yates (Knuth) Shuffle Algoritması
    * Orijinal diziyi bozmadan karıştırılmış kopyasını döndürür.
@@ -484,7 +370,23 @@
     return arr;
   }
 
+  /**
+   * Rastgele Oturum Mantığı (Random Session Selection)
+   * 18 soruluk havuzdan rastgele 1 Basit, 1 Orta ve 1 Zor soru seçilir.
+   * Kullanıcının karşısına Basit -> Orta -> Zor sırasıyla 3 soru gelir.
+   */
   function startQuiz() {
+    if (!QUESTION_POOL || QUESTION_POOL.length === 0) return;
+
+    const easyPool = QUESTION_POOL.filter(q => q.level === "Basit");
+    const mediumPool = QUESTION_POOL.filter(q => q.level === "Orta");
+    const hardPool = QUESTION_POOL.filter(q => q.level === "Zor");
+
+    const randomEasy = easyPool[Math.floor(Math.random() * easyPool.length)];
+    const randomMedium = mediumPool[Math.floor(Math.random() * mediumPool.length)];
+    const randomHard = hardPool[Math.floor(Math.random() * hardPool.length)];
+
+    state.activeQuestions = [randomEasy, randomMedium, randomHard];
     state.currentQuestionIndex = 0;
     state.userAnswers = [];
     state.totalRawPoints = 0;
@@ -496,21 +398,28 @@
     loadQuestion(0);
   }
 
+  /**
+   * Şıkların Karıştırılması (Shuffle Options)
+   * Seçenekler Fisher-Yates algoritması ile karıştırılır.
+   * UI üzerindeki A, B, C, D harfleri sabit kalır, metinler değişir.
+   * correctKey eşleştirmesi yeni buton harfine göre güncellenir.
+   */
   function loadQuestion(index) {
-    if (index >= QUIZ_QUESTIONS.length) {
+    const questions = state.activeQuestions;
+    if (!questions || index >= questions.length) {
       finishQuiz();
       return;
     }
 
-    const q = QUIZ_QUESTIONS[index];
+    const q = questions[index];
     state.currentQuestionIndex = index;
     state.isAnsweringLocked = false;
     state.remainingSeconds = SECONDS_PER_QUESTION;
 
-    // Rozetler ve İlerleme
-    quizQuestionBadge.textContent = `SORU ${index + 1} / ${QUIZ_QUESTIONS.length}`;
+    // Rozetler ve İlerleme (3 Soru)
+    quizQuestionBadge.textContent = `SORU ${index + 1} / ${questions.length}`;
     quizDifficultyBadge.textContent = q.badgeText;
-    quizTotalProgress.style.width = `${((index + 1) / QUIZ_QUESTIONS.length) * 100}%`;
+    quizTotalProgress.style.width = `${((index + 1) / questions.length) * 100}%`;
 
     // Soru Metni
     quizQuestionText.textContent = q.question;
@@ -591,7 +500,7 @@
     clearInterval(state.timerInterval);
     const elapsedSeconds = Math.min(20, (performance.now() - state.currentQuestionStartTime) / 1000);
 
-    const q = QUIZ_QUESTIONS[state.currentQuestionIndex];
+    const q = state.activeQuestions[state.currentQuestionIndex];
     // Güncel şık sırasına göre belirlenen doğru harfle karşılaştırma
     const activeTargetKey = state.currentCorrectKey || q.correctKey;
     const isCorrect = (selectedKey === activeTargetKey);
@@ -621,7 +530,7 @@
     state.isAnsweringLocked = true;
     sound.playWarning();
 
-    const q = QUIZ_QUESTIONS[state.currentQuestionIndex];
+    const q = state.activeQuestions[state.currentQuestionIndex];
     // Süre bitti: 0 puan, 20 sn
     state.userAnswers.push({
       questionId: q.id,
@@ -640,13 +549,14 @@
 
   /**
    * ===========================================================================
-   * 10. EKRAN 4: SONUÇ VE LİDERLİK TABLOSU
+   * 11. EKRAN 4: SONUÇ VE LİDERLİK TABLOSU
    * ===========================================================================
    */
   function finishQuiz() {
     sound.playVictory();
     showScreen("leaderboard");
 
+    const totalQuestions = state.activeQuestions ? state.activeQuestions.length : 3;
     const correctCount = state.userAnswers.filter(a => a.isCorrect).length;
     const safeTime = Math.max(1.0, state.totalTimeSpent);
     
@@ -657,7 +567,7 @@
     resultFinalScore.textContent = calculatedScore.toFixed(2);
     resultCorrectCount.textContent = correctCount;
     if (resultCorrectCount && resultCorrectCount.parentElement) {
-      resultCorrectCount.parentElement.innerHTML = `<span id="result-correct-count" class="text-success">${correctCount}</span> / ${QUIZ_QUESTIONS.length} Doğru`;
+      resultCorrectCount.parentElement.innerHTML = `<span id="result-correct-count" class="text-success">${correctCount}</span> / ${totalQuestions} Doğru`;
     }
     resultRawPoints.textContent = state.totalRawPoints;
     resultTotalTime.textContent = state.totalTimeSpent.toFixed(1);
@@ -681,7 +591,6 @@
       if (data) {
         const parsed = JSON.parse(data);
         if (Array.isArray(parsed)) {
-          // Eski test/fantom verilerini temizle
           const isLegacySeeds = parsed.length === 5 && parsed.every(p => 
             ["Alperen Demir", "Selin Kaya", "Eren Öztürk", "Zeynep Aydın", "Mert Çelik"].includes(p.name)
           );
@@ -739,7 +648,7 @@
           <span>${escapeHtml(item.name)}</span>
           ${isCurrent ? '<span class="current-tag">SEN</span>' : ''}
         </td>
-        <td class="td-correct">${item.correct}/${QUIZ_QUESTIONS.length}</td>
+        <td class="td-correct">${item.correct}/3</td>
         <td class="td-time">${item.totalTime}s</td>
         <td class="td-score">${parseFloat(item.score).toFixed(2)}</td>
       `;
@@ -760,21 +669,23 @@
   }
 
   // Yeni Yarışmacı Butonu -> Ekran 1'e Temiz Dönüş
-  btnNewParticipant.addEventListener("click", () => {
-    sound.playClick();
-    clearInterval(state.timerInterval);
-    state.userName = "";
-    inputUserName.value = "";
-    nameErrorMsg.classList.add("hidden");
-    showScreen("welcome");
-    setTimeout(() => {
-      inputUserName.focus();
-    }, 200);
-  });
+  if (btnNewParticipant) {
+    btnNewParticipant.addEventListener("click", () => {
+      sound.playClick();
+      clearInterval(state.timerInterval);
+      state.userName = "";
+      inputUserName.value = "";
+      nameErrorMsg.classList.add("hidden");
+      showScreen("welcome");
+      setTimeout(() => {
+        if (inputUserName) inputUserName.focus();
+      }, 200);
+    });
+  }
 
   /**
    * ===========================================================================
-   * 11. KİOSK ADMİN PANELİ & JSON YÖNETİMİ (MODAL OVERLAY - DEFENSIVE CONTROLLER)
+   * 12. KİOSK ADMİN PANELİ & JSON YÖNETİMİ (MODAL OVERLAY - DEFENSIVE CONTROLLER)
    * Tetikleyiciler: Ctrl+Shift+A, Logo 3-Click, [⚙ Admin Paneli] butonu, Esc
    * ===========================================================================
    */
@@ -891,8 +802,8 @@
         if (nameInput) nameInput.focus();
         return;
       }
-      if (isNaN(correct) || correct < 0 || correct > QUIZ_QUESTIONS.length) {
-        alert(`Doğru sayısı 0 ile ${QUIZ_QUESTIONS.length} arasında bir değer olmalıdır!`);
+      if (isNaN(correct) || correct < 0 || correct > 3) {
+        alert("Doğru sayısı 0 ile 3 arasında bir değer olmalıdır!");
         return;
       }
       if (isNaN(rawPoints) || rawPoints < 0) {
@@ -1012,31 +923,35 @@
 
   /**
    * ===========================================================================
-   * 12. KONTROLLER (SES VE TAM EKRAN)
+   * 13. KONTROLLER (SES VE TAM EKRAN)
    * ===========================================================================
    */
-  btnSoundToggle.addEventListener("click", () => {
-    sound.enabled = !sound.enabled;
-    if (sound.enabled) {
-      iconSoundOn.classList.remove("hidden");
-      iconSoundOff.classList.add("hidden");
-      sound.playClick();
-    } else {
-      iconSoundOn.classList.add("hidden");
-      iconSoundOff.classList.remove("hidden");
-    }
-  });
-
-  btnFullscreenToggle.addEventListener("click", () => {
-    sound.playClick();
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen().catch(() => {});
+  if (btnSoundToggle) {
+    btnSoundToggle.addEventListener("click", () => {
+      sound.enabled = !sound.enabled;
+      if (sound.enabled) {
+        iconSoundOn.classList.remove("hidden");
+        iconSoundOff.classList.add("hidden");
+        sound.playClick();
+      } else {
+        iconSoundOn.classList.add("hidden");
+        iconSoundOff.classList.remove("hidden");
       }
-    }
-  });
+    });
+  }
+
+  if (btnFullscreenToggle) {
+    btnFullscreenToggle.addEventListener("click", () => {
+      sound.playClick();
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    });
+  }
 
   document.addEventListener("fullscreenchange", () => {
     if (document.fullscreenElement) {
@@ -1050,32 +965,60 @@
 
   /**
    * ===========================================================================
-   * 13. BAŞLANGIÇ ÇALIŞTIRICISI
+   * 14. BAŞLANGIÇ ÇALIŞTIRICISI
    * ===========================================================================
    */
   window.addEventListener("DOMContentLoaded", () => {
-    // İlk liderlik tablosunu yükle
+    // 1. İlk iş olarak questions.json dosyasını asenkron yükle
+    loadQuestionsFromJSON();
+
+    // 2. İlk liderlik tablosunu yükle
     const currentList = getLeaderboard();
     renderLeaderboard(currentList);
 
-    // Kural ve özet kartlarındaki dinamik soru sayılarını güncelle
+    // 3. Kural ve özet kartlarındaki dinamik soru sayılarını güncelle (3 Soru)
     const ruleTitleEl = document.querySelector(".rule-title-cyan");
     if (ruleTitleEl) {
-      ruleTitleEl.textContent = `Toplam ${QUIZ_QUESTIONS.length} Soru`;
+      ruleTitleEl.textContent = "Toplam 3 Soru";
     }
     const ruleDescEl = ruleTitleEl ? ruleTitleEl.nextElementSibling : null;
     if (ruleDescEl) {
-      ruleDescEl.innerHTML = `Yapay zeka alanından sırasıyla <strong class="text-accent">Basit (200p)</strong>, <strong class="text-amber">Orta (300p)</strong> ve <strong class="text-pink">Zor (500p)</strong> toplam ${QUIZ_QUESTIONS.length} soru sorulacak.`;
+      ruleDescEl.innerHTML = `Yapay zeka alanından sırasıyla <strong class="text-accent">Basit (200p)</strong>, <strong class="text-amber">Orta (300p)</strong> ve <strong class="text-pink">Zor (500p)</strong> toplam 3 soru sorulacak.`;
     }
     const statSubEl = resultTotalTime ? resultTotalTime.parentElement?.nextElementSibling : null;
     if (statSubEl && statSubEl.classList.contains("stat-sub")) {
-      statSubEl.textContent = `${QUIZ_QUESTIONS.length} soru toplamı`;
+      statSubEl.textContent = "3 soru toplamı";
     }
 
-    // İlk input odağı
+    // 4. İlk input odağı
     if (inputUserName) {
       inputUserName.focus();
     }
   });
+
+  /**
+   * ===========================================================================
+   * 15. SİSTEM DOĞRULAMA (SELF-TEST)
+   * ===========================================================================
+   */
+  function runSystemCheck() {
+    const pool = QUESTION_POOL;
+    const basitCount = pool.filter(q => q.level === "Basit").length;
+    const ortaCount = pool.filter(q => q.level === "Orta").length;
+    const zorCount = pool.filter(q => q.level === "Zor").length;
+
+    if (basitCount === 6 && ortaCount === 6 && zorCount === 6 && pool.length === 18) {
+      console.log(`[YTT Kiosk Test] Sistem OK. Havuz: ${basitCount} Basit, ${ortaCount} Orta, ${zorCount} Zor.`);
+      return true;
+    } else {
+      console.error(
+        `[YTT Kiosk Test] Hata: Soru havuzunda eksik veya tutarsızlık var! Bulunan: ${basitCount} Basit, ${ortaCount} Orta, ${zorCount} Zor (Toplam: ${pool.length}). Beklenen: 6 Basit, 6 Orta, 6 Zor (Toplam: 18).`
+      );
+      return false;
+    }
+  }
+
+  // Dışarıdan veya konsoldan da tetiklenebilmesi için window nesnesine ekle
+  window.runSystemCheck = runSystemCheck;
 
 })();
